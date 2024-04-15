@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>replit</title>
+
+</head>
+
+<body>
+  <div id="videoId"></div>
+  <div id="videos"></div>
+  <div id="player0"></div>
+  <script>//IFrame Player API の読み込み
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+    </script>
+   
+  <script>
+    let videoid=[];
+    let videoname=[];
+    function videoOpen(res){
+      for(var o of res.items){
+        videoname.push(o.snippet.title);
+        }
+        for (var i = 0; i < videoid.length; i++) { 
+
+          //document.getElementById('videos').innerHTML+=videoid[i]+"</br>";
+          
+          var ytPlayer = [];
+            var ytData = []
+            
+                var date ={
+                id: videoid[i], //youtubeのID
+                area: 'player'+i, //youtubeを表示する場所
+            };
+            ytData.push(date); 
+            
+             // プレーヤーを生成するdiv要素を作成
+  var playerDiv = document.createElement('div');
+  playerDiv.id = 'player' + i;
+  document.body.appendChild(playerDiv);
+  ytPlayer[i] = new YT.Player(playerDiv, {
+			width: 800,
+			height: 450,
+			videoId: ytData[i],
+			playerVars: {
+            }
+		});
+        document.getElementById('videos').innerHTML += videoname[i] + "</br>";
+                
+      
+}
+            
+    }
+      
+    function videoKeep(res){
+      for(var o of res.items){
+        videoid.push(o.id.videoId);
+
+      }
+
+      var videoIdString = videoid.join(',');
+      var url2 = document.getElementById('URL2');
+      //alert(videoId);
+      //document.getElementById('videos').innerHTML += videoIdString + "</br>";
+      url2.src = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + videoIdString + '&key=AIzaSyCWdJgPC0LwEYfSvMu8HYE5DT5Bkw_zCIs&callback=videoOpen';
+    }
+    function channelSearch() {
+      var url = document.getElementById('URL');
+      url.src = 'https://www.googleapis.com/youtube/v3/search/?part=id&channelId=UC6FmznwRG0CpdjtNyHucmTA&maxResults=20&order=date&type=video&key=AIzaSyCWdJgPC0LwEYfSvMu8HYE5DT5Bkw_zCIs&callback=videoKeep'; 
+    }
+    
+  </script>
+
+  <script id='URL'></script>
+  <script id='URL2'></script>
+  <input type='button' value="search" onclick="channelSearch()">
+  
+
+</body>
+
+</html>
