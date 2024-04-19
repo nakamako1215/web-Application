@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>replit</title>
-
+  <link rel="stylesheet" href="youtubeapi.css" type="text/css">
 </head>
 
 <body>
@@ -46,13 +46,18 @@
   ytPlayer[i] = new YT.Player(playerDiv, {
 			width: 800,
 			height: 450,
-			videoId: ytData[i],
+			videoId: videoid[i],
 			playerVars: {
-            }
+        rel:0
+            },
+            events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
 		});
         document.getElementById('videos').innerHTML += videoname[i] + "</br>";
                 
-      
+     
 }
             
     }
@@ -72,13 +77,34 @@
     function channelSearch() {
       var url = document.getElementById('URL');
       url.src = 'https://www.googleapis.com/youtube/v3/search/?part=id&channelId=UC6FmznwRG0CpdjtNyHucmTA&maxResults=20&order=date&type=video&key=AIzaSyCWdJgPC0LwEYfSvMu8HYE5DT5Bkw_zCIs&callback=videoKeep'; 
+    // 検索ボタンを非表示にする
+    document.getElementById('searchButton').classList.add('hidden');
     }
+
     
+     // 4. The API will call this function when the video player is ready.
+     function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
   </script>
 
   <script id='URL'></script>
   <script id='URL2'></script>
-  <input type='button' value="search" onclick="channelSearch()">
+  <input id ='searchButton'type='button' value="search" onclick="channelSearch()">
   
 
 </body>
