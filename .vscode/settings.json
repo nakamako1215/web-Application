@@ -1,0 +1,9 @@
+{
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.suggest.selectionMode": "never",
+    "editor.quickSuggestions": {
+        "other": "off"
+    },
+    "editor.snippetSuggestions": "none",
+    "editor.inlayHints.enabled": "off"
+}
