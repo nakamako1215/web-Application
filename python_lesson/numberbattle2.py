@@ -37,7 +37,10 @@ while True:
             print("入力した値が違います。数字で入力してください")
         
         
-    cpucont = random.choice(cpu)
+    #cpucont = random.choice(cpu) # cpuリストの中からランダムで選ぶ
+    #新機能の追加、もし、playercontの数値よりも大きいものがあったら
+    #その数値の一つ上のリストの中身を表示する。
+    #もしその数値がなかったら、リストの一番下から出力する
     
     print(f"playerの手札'{playercont}',cpuの手札'{cpucont}'")
     if playercont > cpucont:
