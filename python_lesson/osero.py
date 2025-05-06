@@ -4,7 +4,7 @@
 #盤面を作る
 
 class Banmen:
-    def __init__()
+    def __init__():
 
 #どこに〇と×を付けるのか、出力を受け取る。
 
