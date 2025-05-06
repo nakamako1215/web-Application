@@ -1,9 +1,13 @@
 {
-    "editor.suggestOnTriggerCharacters": false,
+    "editor.suggestOnTriggerCharacters": true,
+
+    "editor.suggest.selectionMode": "never",
+
     "editor.suggest.selectionMode": "always",
     "editor.quickSuggestions": {
         "other": "off"
     },
+
     "editor.snippetSuggestions": "none",
     "editor.inlayHints.enabled": "off",
     "editor.inlineSuggest.showToolbar": "never",
@@ -37,7 +41,7 @@
     "editor.suggest.showValues": false,
     "editor.suggest.showUsers": false,
     "editor.suggest.showVariables": false,
-    "editor.suggest.showWords": false,
+    "editor.suggest.showWords": true,
     "terminal.integrated.suggest.showStatusBar": false,
     "emmet.showAbbreviationSuggestions": false,
     "dotnet.completion.showNameCompletionSuggestions": false,
@@ -45,5 +49,6 @@
     "editor.acceptSuggestionOnEnter": "off",
     "debug.console.historySuggestions": false,
     "terminal.integrated.suggest.inlineSuggestion": "off",
-    "editor.suggest.snippetsPreventQuickSuggestions": true
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "editor.suggestSelection": "recentlyUsed"
 }
