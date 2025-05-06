@@ -15,6 +15,7 @@ player = [2,3,4,5,6,7,8,9,10,11] # playerの手札
 turn = 0
 win = 0
 lose =0
+i = 0
 
 while True:
     turn += 1
@@ -37,8 +38,17 @@ while True:
             print("入力した値が違います。数字で入力してください")
         
         
-    cpucont = random.choice(cpu)
-    
+    #cpucont = random.choice(cpu) # cpuリストの中からランダムで選ぶ
+    #新機能の追加、もし、playercontの数値よりも大きいものがあったら
+    #その数値の一つ上のリストの中身を表示する。
+    #もしその数値がなかったら、リストの一番下から出力する
+    for i in range(len(player)):
+        if playercont < cpu[i]:
+            cpucont = cpu[i]
+            break
+        elif playercont > cpu[i]:
+            cpucont = cpu[0]
+        
     print(f"playerの手札'{playercont}',cpuの手札'{cpucont}'")
     if playercont > cpucont:
         print("playerの勝利\n")
