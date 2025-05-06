@@ -1,5 +1,5 @@
 {
-    "editor.suggestOnTriggerCharacters": false,
+    "editor.suggestOnTriggerCharacters": true,
 
     "editor.suggest.selectionMode": "never",
 
@@ -49,5 +49,6 @@
     "editor.acceptSuggestionOnEnter": "off",
     "debug.console.historySuggestions": false,
     "terminal.integrated.suggest.inlineSuggestion": "off",
-    "editor.suggest.snippetsPreventQuickSuggestions": true
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "editor.suggestSelection": "recentlyUsed"
 }

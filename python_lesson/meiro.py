@@ -9,6 +9,8 @@ seikai = [] # 一度踏破した階層の答え
 while True:
     try:
         maizesize = int(input("迷路のサイズを入力 ->"))
+        if maizesize <=3:
+           print("入力範囲外です") 
         break
     except:
         print("入力した値が違います")
