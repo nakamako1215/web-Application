@@ -1,0 +1,72 @@
+{
+    "editor.suggestSelection": "recentlyUsed",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "git.confirmSync": false,
+    "settingsSync.ignoredSettings": [],
+    "workbench.colorTheme": "PyCharm Dark Theme",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "editor.snippetSuggestions": "inline",
+    "editor.suggest.showSnippets": true,
+    "editor.suggest.showClasses": true,
+    "editor.suggest.showFunctions": true,
+    "editor.suggest.showMethods": true,
+    "editor.suggest.showVariables": true,
+    "editor.suggest.showKeywords": true,
+    "editor.suggest.showModules": true,
+    
+    // 無効化してよいもの
+    "editor.suggest.showColors": false,
+    "editor.suggest.showConstants": false,
+    "editor.suggest.showConstructors": false,
+    "editor.suggest.showCustomcolors": false,
+    "editor.suggest.showEnumMembers": false,
+    "editor.suggest.showDeprecated": false,
+    "editor.suggest.showEnums": false,
+    "editor.suggest.showEvents": false,
+    "editor.suggest.showFields": false,
+    "editor.suggest.showFiles": false,
+    "editor.suggest.showFolders": false,
+    "editor.suggest.showInlineDetails": false,
+    "editor.suggest.showIcons": false,
+    "editor.suggest.showInterfaces": false,
+    "editor.suggest.showIssues": false,
+    "editor.suggest.showOperators": false,
+    "editor.suggest.showProperties": false,
+    "editor.suggest.showReferences": false,
+    "editor.suggest.showTypeParameters": false,
+    "editor.suggest.showStructs": false,
+    "editor.suggest.showUnits": false,
+    "editor.suggest.showUsers": false,
+    "editor.suggest.showWords": false,
+    "editor.wordBasedSuggestions": "on",
+    "editor.suggest.selectionMode": "first",
+    "editor.inlineSuggest.showToolbar": "never",
+    "editor.inlineSuggest.enabled": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.screenReaderAnnounceInlineSuggestion": false,
+    "editor.suggestOnTriggerCharacters": true,
+
+    // その他補完系の不要設定
+    "debug.console.historySuggestions": false,
+    "terminal.integrated.suggest.showStatusBar": false,
+    "terminal.integrated.suggest.inlineSuggestion": "off",
+    "github.copilot.renameSuggestions.triggerAutomatically": false,
+    "javascript.suggestionActions.enabled": false,
+    "typescript.suggestionActions.enabled": false,
+    "emmet.showAbbreviationSuggestions": false,
+    "java.completion.postfix.enabled": false,
+    "dotnet.completion.showNameCompletionSuggestions": false,
+    "editor.fontLigatures": false,
+    "git.enableSmartCommit": true,
+
+    // Pythonの補完エンジン
+    "python.languageServer": "Pylance"
+}

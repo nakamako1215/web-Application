@@ -1,6 +1,6 @@
 {
     "editor.suggestOnTriggerCharacters": false,
-    "editor.suggest.selectionMode": "never",
+    "editor.suggest.selectionMode": "always",
     "editor.quickSuggestions": {
         "other": "off"
     },
@@ -44,5 +44,6 @@
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.acceptSuggestionOnEnter": "off",
     "debug.console.historySuggestions": false,
-    "terminal.integrated.suggest.inlineSuggestion": "off"
+    "terminal.integrated.suggest.inlineSuggestion": "off",
+    "editor.suggest.snippetsPreventQuickSuggestions": true
 }
