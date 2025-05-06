@@ -1,9 +1,10 @@
-
 #〇×ゲーム
 #必要な要素
 
 #盤面を作る
-class banmen:
+
+class Banmen:
+    def __init__()
 
 #どこに〇と×を付けるのか、出力を受け取る。
 
