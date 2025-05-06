@@ -1,9 +1,6 @@
 {
     "editor.suggestOnTriggerCharacters": false,
     "editor.suggest.selectionMode": "never",
-    "editor.quickSuggestions": {
-        "other": "off"
-    },
     "editor.snippetSuggestions": "none",
     "editor.inlayHints.enabled": "off",
     "editor.inlineSuggest.showToolbar": "never",
@@ -37,7 +34,7 @@
     "editor.suggest.showValues": false,
     "editor.suggest.showUsers": false,
     "editor.suggest.showVariables": false,
-    "editor.suggest.showWords": false,
+    "editor.suggest.showWords": true,
     "terminal.integrated.suggest.showStatusBar": false,
     "emmet.showAbbreviationSuggestions": false,
     "dotnet.completion.showNameCompletionSuggestions": false,
