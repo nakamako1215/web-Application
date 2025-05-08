@@ -15,12 +15,20 @@ class Banmen:
 #どこに〇と×を付けるのか、出力を受け取る。
 class nyuryoku:
     def __init__(self):
-        self.p1_0 = int(input(f"player1の数値を入力([ここ][])\n"))
-        self.p1_1 = int(input(f"player1の数値を入力([][ここ])\n"))
-        self.p2_0 = int(input(f"player2の数値を入力([ここ][])\n"))
-        self.p2_1 = int(input(f"player2の数値を入力([][ここ])\n"))
-
-
+        while True:
+            try:
+                #ここでの条件。リストの範囲を超える数値を書かせない。
+                #書いた場合はもう一度書かせる。文字列も同様に
+                #既に〇か×がある場合ももう一度書かせる。
+                self.p1_0 = int(input(f"player1の数値を入力(行(横))\n"))
+                self.p1_1 = int(input(f"player1の数値を入力(縦(列))\n"))
+                if self.banmen[self.p1_0][self.p1_1] == '〇' or self.banmen[self.p2_0][self.p2_1] == '✕':
+                    print('既に書かれています。もう一度書き直してください')
+                self.p2_0 = int(input(f"player2の数値を入力((行(横))\n"))
+                self.p2_1 = int(input(f"player2の数値を入力(縦(列))\n"))
+                if self.banmen[self.p2_0][self.p2_1] == '✕' or self.banmen[self.p2_0][self.p2_1] == '〇':
+                    print('既に書かれています。もう一度書き直してください')
+            
 
 #縦横斜めに３つ〇もしくはxを付けたら勝利と出力、やられたらxと出力、
 
