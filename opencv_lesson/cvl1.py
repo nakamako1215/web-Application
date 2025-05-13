@@ -16,6 +16,8 @@ def mousetriming(event, x, y, flags, param):
             pt2x = (x,y)
             print(pt2x)
             cv2.line(img,(pt1x),(pt2x),(255,0,0),2)
+            dst = img[min(pt1x[0],pt2x[0]):max(pt1x[0],pt2x[0]),min(pt1x[1],pt2x[1]):max(pt1x[1],pt2x[1])]
+            cv2.imwrite('triming/tr.jpg',dst)
         elif event == cv2.EVENT_RBUTTONDOWN:
             pt1y = (x,y)
             print(pt1y)
