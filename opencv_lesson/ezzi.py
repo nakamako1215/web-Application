@@ -5,8 +5,8 @@ dst = cv2.Canny(img,100,100)
 dst = cv2.cvtColor(dst,cv2.IMREAD_COLOR)
 print(img.shape)
 print(dst.shape)
-gousei = cv2.addWeighted(img,0.6, dst, 0.4,0.0)
-gousei = cv2.cvtColor(img,cv2.IMREAD_COLOR)
+gousei = cv2.addWeighted(img,1.0, dst, 0.0,0.0)
+
 def onMouse(event,x,y,flags,params):
     global img
     if event == cv2.EVENT_MOUSEMOVE :
