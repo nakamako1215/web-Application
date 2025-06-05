@@ -1,0 +1,58 @@
+SELECT name,age FROM customers;
+SELECT name,price FROM products WHERE price >= 120;
+SELECT * FROM orders WHERE order_date = "2025-06-03";
+
+SELECT name,email,age FROM customers WHERE age >= 30;
+SELECT c.name,p.name,o.quantity
+    -> FROM customers c
+    -> JOIN orders o ON c.id = o.customer_id
+    -> JOIN products p ON p.id = o.product_id
+    -> WHERE c.name = "田中太郎";
+SELECT customer_id,product_id,order_date FROM orders ORDER BY order_date ASC;
+
+SELECT c.name,(p.price * o.quantity) AS goukei
+    -> FROM customers c JOIN orders o ON o.customer_id = c.id
+    -> JOIN products p ON o.product_id = p.id;
+SELECT p.name,SUM(o.quantity)
+    -> FROM products p JOIN orders o ON o.product_id = p.id
+    -> GROUP BY o.product_id;
+SELECT c.name ,(p.price*o.quantity)
+    -> FROM customers c JOIN orders o ON o.customer_id = c.id
+    -> JOIN products p ON o.product_id = p.id
+    -> GROUP BY c.name;
+
+
+
+SELECT e.name,SUM(s.amount) AS total_amount
+    -> FROM employees e JOIN salaries s ON s.employee_id = e.id
+    -> GROUP BY e.name;
+
+SELECT e.name,SUM(s.amount) AS total_amount
+    -> FROM employees e JOIN salaries s ON s.employee_id = e.id
+    -> GROUP BY e.name HAVING total_amount >= 600000;
+
+SELECT d.name,SUM(s.amount) AS total_amount
+    -> FROM departments d JOIN employees e ON e.department_id = d.id
+    -> JOIN salaries s ON s.employee_id = s.id
+    -> GROUP BY s.employee_id,e.department_id;
+
+SELECT name,hire_date FROM employees
+    -> ORDER BY hire_date DESC LIMIT 1;
+
+
+
+SELECT d.name,DATE_FORMAT(s.payment_date,'%Y-%m'),SUM(s.amount) AS total_amount
+    -> FROM departments d JOIN employees e ON e.department_id = d.id
+    -> JOIN salaries s ON s.employee_id = e.id
+    -> GROUP BY d.id,s.payment_date;
+
+SELECT e.name,COUNT(s.employee_id)
+    -> FROM employees e JOIN salaries s ON s.employee_id = e.id
+    -> GROUP BY e.id;
+
+SELECT d.name,SUM(s.amount) AS total_amount
+    -> FROM departments d JOIN employees e ON e.department_id = d.id
+    -> JOIN salaries s ON s.employee_id = e.id
+    -> GROUP BY d.id , s.payment_date
+    -> HAVING s.payment_date = '2025-05-25'
+    -> WHERE total_amount = (SELECT MAX(total_amount));
